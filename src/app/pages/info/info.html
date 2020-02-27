@@ -7,7 +7,6 @@
         </div>
         <div ng-if="!computerStatus" class="select-features">
             <h4>Select features computer</h4>
-
             <div class="options-features">
                 <div class="content-select">
                     <label>Hard Disk Feature</label>
@@ -37,7 +36,6 @@
                 </div>
             </div>
         </div>
-
         <div class="features">
             <div class="header">
                 <h3>Computer Features</h3>
@@ -101,10 +99,15 @@
                 </ul>
             </div>
         </div>
-
     </div>
 </div>
 <div class="controls">
     <button class="btn-control" disabled><i class="fa fa-power-off fa-2x"></i></button>
     <div ng-class="flagPower"></div>
+</div>
+
+<div class="container" ng-if="message">
+    <div ng-class="alertClass">
+        <h3>{{ message }}</h3>
+    </div>
 </div>

@@ -1,4 +1,4 @@
-app.controller('InfoController', ['$scope', 'computer', 'apiService', '$location', '$window', function ($scope, $computer, $apiService, $location, $window) {
+app.controller('InfoController', ['$scope', 'computer', 'apiService', '$location', '$timeout', function ($scope, $computer, $apiService, $location, $timeout) {
     /**
      * Variables
      */
@@ -8,6 +8,8 @@ app.controller('InfoController', ['$scope', 'computer', 'apiService', '$location
     $scope.selectedProcessor = '';
     $scope.selectedGraphicCard = '';
     $scope.flagPower = '';
+    $scope.message = '';
+    $scope.alertClass = [];
     /**
      * Init method, for load all settings data of my computers
      */
@@ -46,6 +48,15 @@ app.controller('InfoController', ['$scope', 'computer', 'apiService', '$location
         return data;
     }
     /**
+     * Reset settings, by default...
+     */
+    $scope.reset = function () {
+        // Reset settings
+        $computer.resetConfigComputer();
+        $scope.init();
+        $scope.showMessage(false);
+    }
+    /**
      * Save new settings
      */
     $scope.save = function() {
@@ -54,14 +65,23 @@ app.controller('InfoController', ['$scope', 'computer', 'apiService', '$location
         $computer.setComputerRamMemory($scope.dataRamMem);
         $computer.setComputerProcessor($scope.dataProcessor);
         $computer.setComputerGraphicCard($scope.dataGraphicCard);
+        $scope.showMessage(true);
     }
     /**
-     * Reset settings, by default...
+     * 
      */
-    $scope.reset = function() {
-        // Reset settings
-        $computer.resetConfigComputer();
-        $scope.init();
+    $scope.showMessage = function(flag) {
+        if (flag) {
+            $scope.message = 'Saved settings!';
+            $scope.alertClass = ['alert', 'alert-info'];        
+        } else {
+            $scope.message = 'Reset settings!';
+            $scope.alertClass = ['alert', 'alert-success'];
+        }
+        
+        $timeout(() => {
+            $scope.message = '';
+        }, 4000);
     }
     /**
      * Check what key press for redirect or doing something,...
@@ -119,5 +139,4 @@ app.controller('InfoController', ['$scope', 'computer', 'apiService', '$location
         $scope.screenClass.push('screen-power-on');
         $scope.flagPower = 'power-on';
     }
-
 }]);
