@@ -1,0 +1,11 @@
+<div class="container mt-5 border-screen">
+    <!-- div ng-class="$flagClassScreen ? 'screen-power-on' : 'screen-power-off'"></div-->
+    <div ng-class="screenClass">
+        <h3>{{ message }}</h3>
+    </div>
+</div>
+<div class="controls">
+    <button ng-class="btnClass" ng-click="toggleComputer()" ng-disabled="disabledBtn"><i class="fa fa-power-off fa-2x"></i></button>
+    <button ng-class="btnClass" ng-click="redirect()" ng-disabled="disabledBtn"><i class="fa fa-cog fa-2x"></i></button>
+    <div ng-class="flagPower"></div>
+</div>

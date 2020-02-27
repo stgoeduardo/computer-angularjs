@@ -1,0 +1,110 @@
+<div class="container mt-5 border-screen" ng-keyup='testkeycode($event)' tabindex="0">
+    <div ng-class="screenClass">
+        <div class="suggestion">
+            <em>Press ESC for Exit</em>
+            <em ng-if="!computerStatus">Press R for Reset settings</em>
+            <em ng-if="!computerStatus">Press ENTER for Save settings</em>
+        </div>
+        <div ng-if="!computerStatus" class="select-features">
+            <h4>Select features computer</h4>
+
+            <div class="options-features">
+                <div class="content-select">
+                    <label>Hard Disk Feature</label>
+                    <select class="select-features-computer" ng-model='selectedHdd' ng-change="changeHdd(selectedHdd)">
+                        <option ng-repeat="h in hdd" value="{{ h._id }}">{{ h.name }} - {{ h.model }}</option>
+                    </select>
+                </div>
+                <div class="content-select">
+                    <label>Ram Memory Feature</label>
+                    <select class="select-features-computer" ng-model='selectedRamMem' ng-change="changeRamMem(selectedRamMem)">
+                        <option ng-repeat="r in ramMemory" value="{{ r._id }}">{{ r.name }} - {{ r.model }}</option>
+                    </select>
+                </div>
+                <div class="content-select">
+                    <label>Processors Feature</label>
+                    <select class="select-features-computer" ng-model='selectedProcessor'
+                        ng-change="changeProcessor(selectedProcessor)">
+                        <option ng-repeat="p in processors" value="{{ p._id }}">{{ p.name }} - {{ p.classification }}</option>
+                    </select>
+                </div>
+                <div class="content-select">
+                    <label>Graphic Card Feature</label>
+                    <select class="select-features-computer" ng-model='selectedGraphicCard'
+                        ng-change="changeGraphicCard(selectedGraphicCard)">
+                        <option ng-repeat="g in graphicCard" value="{{ g._id }}">{{ g.diameter }} - {{ g.name }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="header">
+                <h3>Computer Features</h3>
+            </div>
+            <div class="feature mt-4">
+                <h4>Hard Disk</h4>
+                <ul>
+                    <li>ID: {{ dataHdd._id }}</li>
+                    <li>Name: {{ dataHdd.name }}</li>
+                    <li>Model: {{ dataHdd.model }}</li>
+                    <li>Cost: {{ dataHdd.cost_in_credits }}</li>
+                    <li>Atmosphering Speed: {{ dataHdd.max_atmosphering_speed }}</li>
+                    <li>Capacity: {{ dataHdd.cargo_capacity }}</li>
+                    <li>Consumables: {{ dataHdd.consumables }}</li>
+                    <li>Vehiclee Class: {{ dataHdd.vehicle_class }}</li>
+                    <li>Created: {{ dataHdd.created }}</li>
+                </ul>
+            </div>
+            <div class="feature mt-4">
+                <h4>Ram Memory</h4>
+                <ul>
+                    <li>ID: {{ dataRamMem._id }}</li>
+                    <li>Name: {{ dataRamMem.name }}</li>
+                    <li>Model: {{ dataRamMem.model }}</li>
+                    <li>Cost: {{ dataRamMem.cost_in_credits }}</li>
+                    <li>Atmosphering Speed: {{ dataRamMem.max_atmosphering_speed }}</li>
+                    <li>Capacity: {{ dataRamMem.cargo_capacity }}</li>
+                    <li>Consumables: {{ dataRamMem.consumables }}</li>
+                    <li>HyperDrive: {{ dataRamMem.hyperdrive_rating }}</li>
+                    <li>Starship Class: {{ dataRamMem.starship_class }}</li>
+                    <li>Created: {{ dataRamMem.created }}</li>
+                </ul>
+            </div>
+            <div class="feature mt-4">
+                <h4>Processor</h4>
+                <ul>
+                    <li>ID: {{ dataProcessor._id }}</li>
+                    <li>Name: {{ dataProcessor.name }}</li>
+                    <li>Classification: {{ dataProcessor.classification }}</li>
+                    <li>Designation: {{ dataProcessor.designation }}</li>
+                    <li>Average Height: {{ dataProcessor.average_height }}</li>
+                    <li>Average Lifespan: {{ dataProcessor.average_lifespan }}</li>
+                    <li>Language: {{ dataProcessor.language }}</li>
+                    <li>Created: {{ dataProcessor.created }}</li>
+                </ul>
+            </div>
+            <div class="feature mt-4">
+                <h4>Graphic Card</h4>
+                <ul>
+                    <li>ID: {{ dataGraphicCard._id }}</li>
+                    <li>Name: {{ dataGraphicCard.name }}</li>
+                    <li>Rotation Period: {{ dataGraphicCard.rotation_period }}</li>
+                    <li>Orbital Period: {{ dataGraphicCard.orbital_period }}</li>
+                    <li>Diameter: {{ dataGraphicCard.diameter }}</li>
+                    <li>Climate: {{ dataGraphicCard.climate }}</li>
+                    <li>Gravity: {{ dataGraphicCard.gravity }}</li>
+                    <li>Terrain: {{ dataGraphicCard.terrain }}</li>
+                    <li>Surface Water: {{ dataGraphicCard.surface_water }}</li>
+                    <li>Population: {{ dataGraphicCard.population }}</li>
+                    <li>Created: {{ dataGraphicCard.created }}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="controls">
+    <button class="btn-control" disabled><i class="fa fa-power-off fa-2x"></i></button>
+    <div ng-class="flagPower"></div>
+</div>

@@ -1,0 +1,130 @@
+.border-screen {
+    border: 3px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    border: 2px solid black; 
+    margin: 10px 0px;
+    padding: 10px;
+    height: 600px;
+    color: #fff;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen-power-off {
+    background: #333;
+}
+.screen-power-on {
+    background: lightseagreen;
+}
+.screen-info {
+    border: 2px solid black; margin: 10px 0px;padding: 10px;height: 450px;
+    background: blue;
+}
+.controls {
+    border: 1px solid black;
+    margin: 1rem 12rem;
+    padding: 10px;
+    height: 150px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: space-between;
+    background: #333;
+    border: 3px solid lightgray;
+}
+
+.btn-control {
+    border: 1px solid lightgray;
+    width: 80px;
+    height: 80px;
+    outline: none !important;
+    border-radius: 50%;
+    background: #bbb;
+    margin: 0rem 1rem;
+}
+.btn-control-power-on {
+    border: 2px solid lime;
+    color: lime;
+    font-weight: bolder;
+}
+.power-on {
+    width: 30px;height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    background: lime;
+}
+
+.power-off {
+    width: 30px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    background: lightgray;
+}
+.suggestion {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.suggestion em {
+    padding: 5px;
+}
+.select-features {
+    align-self: flex-start;
+    /*border: 1px solid blue;*/
+    margin: 0.5rem 0rem;
+    padding: 10px 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+.options-features {
+    display: flex;
+    flex-flow: row wrap;
+    /*border: 1px solid lightblue;*/
+}
+.content-select {
+    /*border: 1px solid black;*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.select-features-computer {
+    /*border: 1px solid red;*/
+    background: transparent;
+    height: 50px;
+    width: 100%;
+    /*-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid var(--light, lightgrey);*/
+    border: none;
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    font-size: 16px;
+    color: #eee;
+    font-weight: bolder;
+}
+.features {
+    width: 100%;
+    border-top: 1px solid lightgray;
+    /*border: 1px solid red;*/
+    padding: 10px 0px;
+    display: flex;
+    flex-flow: row wrap;
+}
+.header {
+    flex: 1 100%;
+}
+.feature {
+    flex: 1 50%;
+}
